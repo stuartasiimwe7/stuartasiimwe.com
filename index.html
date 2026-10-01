@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stuart Asiimwe - Software, research, and experiments</title>
+    <meta
+      name="description"
+      content="Software, computer vision research, physical-computing experiments, and writing by Stuart Asiimwe."
+    />
+    <link rel="canonical" href="https://stuartasiimwe.com/" />
+    <meta
+      property="og:title"
+      content="Stuart Asiimwe - Software, research, and experiments"
+    />
+    <meta
+      property="og:description"
+      content="An independent home for the things I build, investigate, and write about."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://stuartasiimwe.com/" />
+    <meta
+      property="og:image"
+      content="https://stuartasiimwe.com/assets/img/small.webp"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="assets/img/fin_favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/site.css?v=20260928-3" />
+    <script>
+      if (
+        localStorage.getItem("portfolio-theme") === "dark" ||
+        (!localStorage.getItem("portfolio-theme") &&
+          matchMedia("(prefers-color-scheme:dark)").matches)
+      )
+        document.documentElement.dataset.theme = "dark";
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Stuart Asiimwe",
+        "url": "https://stuartasiimwe.com",
+        "sameAs": [
+          "https://github.com/stuartasiimwe7",
+          "https://www.linkedin.com/in/stuartasiimwe",
+          "https://medium.com/@stuart7",
+          "https://dev.to/stuartasiimwe7"
+        ],
+        "knowsAbout": [
+          "Software engineering",
+          "Computer vision",
+          "Machine learning",
+          "Image analysis"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="nav-home" href="index.html" aria-label="Stuart Asiimwe, home">
+        <img src="assets/img/small.webp" alt="" width="900" height="600" />
+      </a>
+      <div class="nav-wrap">
+        <nav class="site-nav" data-nav aria-label="Primary">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="work/index.html">Work</a>
+          <a href="research/index.html">Research</a>
+          <a href="writing/index.html">Writing</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+      <button
+        class="menu-toggle"
+        type="button"
+        data-menu-toggle
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+      <button
+        class="theme-toggle"
+        type="button"
+        data-theme-toggle
+        aria-label="Use dark theme"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon-moon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M20.5 15.2A8.8 8.8 0 0 1 8.8 3.5 8.8 8.8 0 1 0 20.5 15.2Z"
+          /></svg
+        ><svg
+          aria-hidden="true"
+          class="icon-sun"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+          />
+        </svg>
+      </button>
+    </header>
+
+    <main id="main">
+      <section class="hero shell">
+        <h1>I build reliable software systems.</h1>
+        <p class="hero-lead">
+          I’m a software engineer working across DevOps and applied AI, based in
+          Seoul.
+          <br />
+          I build computer vision systems, machine learning tools, and
+          production software that take AI models from experiments and integrate
+          them into reliable operational workflows.
+        </p>
+        <div class="social-row" aria-label="Social links">
+          <a
+            href="https://github.com/stuartasiimwe7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path
+                d="M12 .7A11.5 11.5 0 0 0 8.4 23c.6.1.8-.3.8-.6v-2.2c-3.4.7-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17 4 18 4.3 18 4.3c.6 1.5.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.8 5.4-5.5 5.7.4.4.8 1.1.8 2.2v4c0 .4.2.7.8.6A11.5 11.5 0 0 0 12 .7Z"
+              />
+            </svg>
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/stuartasiimwe"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path
+                d="M5.3 7.8H1.7V22h3.6V7.8ZM3.5 2A2.1 2.1 0 1 0 3.5 6.2 2.1 2.1 0 0 0 3.5 2ZM22.3 13.8c0-4.3-2.3-6.3-5.4-6.3-2.5 0-3.6 1.4-4.2 2.3v-2H9.1V22h3.6v-7c0-1.9.4-3.7 2.7-3.7 2.3 0 2.3 2.1 2.3 3.8V22h3.6l1-8.2Z"
+              />
+            </svg>
+            LinkedIn
+          </a>
+          <a href="mailto:stuartasiimwe7@naver.com">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path
+                d="M2 5.5h20v13H2v-13Zm1.5 1.3 8.5 6 8.5-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              />
+            </svg>
+            Email
+          </a>
+        </div>
+      </section>
+
+      <div class="photo-strip-wrap" aria-label="A glimpse of my work">
+        <div class="photo-strip">
+          <figure class="photo" style="--tilt: -4deg; --offset: 8px">
+            <img
+              src="assets/img/portfolio/project5.jpg"
+              alt="DiagnoseCloud computer-aided detection platform"
+              width="1120"
+              height="1120"
+            />
+          </figure>
+          <figure class="photo poster" style="--tilt: 3deg; --offset: 0px">
+            <img
+              src="assets/img/portfolio/mushroom-mycelia-poster-display.webp"
+              alt="Research poster about monitoring mushroom mycelial growth"
+              width="1086"
+              height="1448"
+            />
+          </figure>
+          <figure class="photo" style="--tilt: -2deg; --offset: 8px">
+            <img
+              src="assets/img/portfolio/blackboxml.webp"
+              alt="BlackBoxML project visual"
+              width="900"
+              height="600"
+            />
+          </figure>
+          <figure class="photo" style="--tilt: 3deg; --offset: 0px">
+            <img
+              src="assets/img/portfolio/project8.jpg"
+              alt="HanGo mobile project management application"
+              loading="lazy"
+              width="900"
+              height="675"
+            />
+          </figure>
+          <figure class="photo" style="--tilt: -4deg; --offset: 8px">
+            <img
+              src="assets/img/portfolio/project7.webp"
+              alt="DefectNet printed circuit board defect detection project visual"
+              loading="lazy"
+              width="850"
+              height="579"
+            />
+          </figure>
+        </div>
+      </div>
+
+      <section
+        class="home-grid shell"
+        aria-label="Work highlights and contact information"
+      >
+        <div class="feed">
+          <h2 class="home-section-title">Highlights</h2>
+          <article class="feed-item">
+            <p class="feed-meta">Research - 2026</p>
+            <h2>Reconstructing historical XFS filesystems</h2>
+            <p>
+              An ongoing study of read only, provenance preserving recovery of
+              historical inode, namespace, extent, and payload evidence from
+              reformatted XFS volumes.
+            </p>
+            <a class="read-link" href="research/xfs-reconstruct.html">
+              Read the research
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+          <article class="feed-item">
+            <p class="feed-meta">Open source - 2026</p>
+            <h2>OpenHanji</h2>
+            <p>
+              A Python parser for reading HWPX documents into typed objects and
+              converting them to JSON, Markdown, or plain text for search, RAG,
+              and backend systems.
+            </p>
+            <div class="feed-links">
+              <a
+                class="read-link"
+                href="https://pypi.org/project/openhanji/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                PyPI
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                class="read-link"
+                href="https://openhanji.readthedocs.io/en/latest/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Documentation
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+          <article class="feed-item">
+            <p class="feed-meta">Open source - 2025</p>
+            <h2>BlackBoxML</h2>
+            <p>
+              A Python toolkit for tracking machine learning experiments,
+              metrics, parameters, and artifacts without adding a heavyweight
+              platform.
+            </p>
+            <div class="feed-links">
+              <a
+                class="read-link"
+                href="https://pypi.org/project/blackboxml/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                PyPI
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                class="read-link"
+                href="https://blackboxml.readthedocs.io/en/latest/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Documentation
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+          <article class="feed-item">
+            <p class="feed-meta">Research - 2025</p>
+            <h2>Ensemble learning: Dynamic feature engineering with SHAP</h2>
+            <p>
+              A SHAP-guided method for identifying relevant, non-redundant
+              features and improving ensemble malware classification while
+              preserving model transparency.
+            </p>
+            <a
+              class="read-link"
+              href="https://hanyang.dcollection.net/common/orgView/200000828015"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read the research
+              <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+        </div>
+
+        <aside class="sidebar">
+          <section class="side-card">
+            <div class="side-card-header">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5" />
+              </svg>
+              <h2>How I work</h2>
+            </div>
+            <p>
+              From prototype to production, I design software, integrate models,
+              automate delivery, and build observability into the systems I
+              ship.
+            </p>
+            <a class="read-link" href="about.html">
+              More about my approach
+              <span aria-hidden="true">→</span>
+            </a>
+          </section>
+          <section class="side-card">
+            <div class="side-card-header">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M3 6h18v12H3zM3 7l9 6 9-6" />
+              </svg>
+              <h2>Have a problem to solve?</h2>
+            </div>
+            <p>
+              I'm open to working together on software products, production
+              infrastructure, computer vision systems, and applied AI research.
+            </p>
+            <a class="read-link" href="contact.html">
+              Start a conversation
+              <span aria-hidden="true">→</span>
+            </a>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <nav class="footer-links" aria-label="Footer">
+          <a href="work/index.html">Work</a>
+          <a href="research/index.html">Research</a>
+          <a href="writing/index.html">Writing</a>
+          <a href="about.html">About</a>
+        </nav>
+        <p class="copyright">
+          ©
+          <span data-year>2026</span>
+          Stuart Asiimwe. Built as a living workshop.
+        </p>
+      </div>
+    </footer>
+    <script src="assets/js/site.js"></script>
+  </body>
+</html>
