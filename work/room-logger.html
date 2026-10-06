@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ESP32 Room Logger - Stuart Asiimwe</title>
+    <meta
+      name="description"
+      content="Planned ESP32 and SHT31 room-condition logger with wiring, firmware and test targets."
+    />
+    <link rel="canonical" href="https://stuartasiimwe.com/work/room-logger.html" />
+    <meta property="og:title" content="ESP32 Room Logger - Stuart Asiimwe" />
+    <meta
+      property="og:description"
+      content="Hardware untested: an ESP32 room-condition logger build specification."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://stuartasiimwe.com/work/room-logger.html" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="../assets/img/fin_favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/site.css?v=20260928-3" />
+    <script>
+      if (
+        localStorage.getItem("portfolio-theme") === "dark" ||
+        (!localStorage.getItem("portfolio-theme") &&
+          matchMedia("(prefers-color-scheme:dark)").matches)
+      )
+        document.documentElement.dataset.theme = "dark";
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a
+        class="nav-home"
+        href="/"
+        aria-label="Stuart Asiimwe, home"
+      >
+        <img src="../assets/img/small.webp" alt="" width="900" height="600" />
+      </a>
+      <div class="nav-wrap">
+        <nav class="site-nav" data-nav aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/work/" aria-current="page">Work</a>
+          <a href="/research/">Research</a>
+          <a href="/writing/">Writing</a>
+          <a href="../about.html">About</a>
+        </nav>
+      </div>
+      <button
+        class="menu-toggle"
+        type="button"
+        data-menu-toggle
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+      <button
+        class="theme-toggle"
+        type="button"
+        data-theme-toggle
+        aria-label="Use dark theme"
+      >
+        <svg aria-hidden="true" class="icon-moon" viewBox="0 0 24 24">
+          <path
+            d="M20.5 15.2A8.8 8.8 0 0 1 8.8 3.5 8.8 8.8 0 1 0 20.5 15.2Z"
+          /></svg
+        ><svg aria-hidden="true" class="icon-sun" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+          />
+        </svg>
+      </button>
+    </header>
+    <main id="main">
+      <header class="article-header shell">
+        <p class="eyebrow">Electronics · Planned / hardware untested</p>
+        <h1>ESP32 room-condition logger</h1>
+        <p class="article-deck">A first build in sensor acquisition, I²C debugging and measurement. The goal is a reproducible temperature-and-humidity record with honest fault reporting.</p>
+        <div class="article-meta"><span>Specification: 6 October 2026</span><span>No hardware measurements yet</span></div>
+      </header>
+      <div class="article-layout shell">
+        <article class="prose">
+          <h2 id="status">Build status</h2>
+          <p>Design and firmware scaffold only. Assembly, firmware compilation, upload and physical tests are pending. No accuracy, uptime or power results are claimed.</p>
+          <h2 id="parts">Parts</h2>
+          <ul>
+            <li>1 × <a href="https://www.adafruit.com/product/5900">Adafruit ESP32 Feather V2 with headers</a> — $20.95.</li>
+            <li>1 × <a href="https://www.adafruit.com/product/2857">Adafruit SHT31-D STEMMA QT sensor</a> — $13.95.</li>
+            <li>1 × <a href="https://www.adafruit.com/product/4210">100 mm QT-to-QT cable</a> — $0.95.</li>
+            <li>USB-C data cable and nonconductive, ventilated mounting base.</li>
+          </ul>
+          <p>Listed core subtotal: $35.85 before shipping and taxes, checked 6 October 2026. This measures temperature and humidity, not CO₂ or air quality.</p>
+          <h2 id="wiring">Wiring and acquisition</h2>
+          <p>With USB disconnected, join the Feather QT connector to the sensor QT connector. Black is ground, red is the switched 3.3 V supply, blue is SDA and yellow is SCL. Leave the sensor at address 0x44. Keep it separated from controller heat.</p>
+          <p>The Arduino scaffold enables QT power, scans I²C, and emits a CSV sample every five seconds. Missing or invalid readings remain empty with an error status. A Python serial collector adds host UTC timestamps.</p>
+          <p><a href="https://github.com/stuartasiimwe7/stuartasiimwe.com/tree/feature/room-logger/hardware/room-logger">Build specification and firmware source</a> include purchasing alternatives, setup instructions and the evidence format.</p>
+          <h2 id="tests">Test milestones</h2>
+          <ol>
+            <li>Measure the sensor supply; target 3.3 V ±5%.</li>
+            <li>Confirm address 0x44 and an explicit missing-sensor state.</li>
+            <li>Capture ten minutes of five-second samples; inspect invalid reads and gaps.</li>
+            <li>Compare ten paired readings with a documented reference after settling.</li>
+            <li>Test absent-sensor boot and resets. Disconnect I²C only with power off.</li>
+            <li>Capture 24 hours; report actual duration, valid fraction, resets and largest gap.</li>
+          </ol>
+          <p>These are acceptance targets. Every milestone remains pending.</p>
+          <h2 id="evidence">Evidence and results</h2>
+          <p>No build photos or measured data are available yet. This section will hold actual wiring photos, instrument readings, raw CSV, plots, software versions and troubleshooting records after the physical build.</p>
+          <h2 id="sources">Technical references</h2>
+          <ul><li><a href="https://learn.adafruit.com/adafruit-esp32-feather-v2/pinouts">Feather V2 pinouts and QT power</a></li><li><a href="https://learn.adafruit.com/adafruit-esp32-feather-v2/i2c-scan-test">I²C scan and fault diagnostics</a></li></ul>
+        </article>
+        <aside class="article-aside"><h2>Build record</h2><ul><li><a href="#status">Status</a></li><li><a href="#parts">Parts</a></li><li><a href="#wiring">Wiring</a></li><li><a href="#tests">Tests</a></li><li><a href="#evidence">Evidence</a></li></ul></aside>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <nav class="footer-links" aria-label="Footer">
+          <a href="/work/">Work</a>
+          <a href="/research/">Research</a>
+          <a href="/writing/">Writing</a>
+          <a href="../about.html">About</a>
+        </nav>
+        <p class="copyright">
+          ©
+          <span data-year>2026</span>
+          Stuart Asiimwe.
+        </p>
+      </div>
+    </footer>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>
